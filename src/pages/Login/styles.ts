@@ -1,16 +1,41 @@
 import styled from 'styled-components';
 
 export const LoginContainer = styled.div`
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  justify-content: center;
+  padding: 2rem;
+`;
+
+export const LoginBox = styled.div`
+  margin-top: -6rem;
+  background-color: white;
+  padding: 4rem;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #000055;;
+  }
+
+  img {
+    width: 200px;
+    margin-bottom: 2rem;
+    margin-top: -2rem;
+    margin-left: 1.4rem;
+  }
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 268px;
 `;
 
 export const Input = styled.input`
@@ -35,12 +60,14 @@ export const Button = styled.button`
 
 export const LinksContainer = styled.div`
   margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const StyledLink = styled.button`
   background: none;
   border: none;
-  color: #0077b6;
+  color: #000055;
   font-size: 16px;
   cursor: pointer;
   margin-right: 10px;
