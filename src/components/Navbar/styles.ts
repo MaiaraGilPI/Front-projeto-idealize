@@ -5,7 +5,6 @@ export const NavbarContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: #0077b6; */
   background: linear-gradient(135deg, #003f88, #0077b6);
   border-bottom: #003f88 2px solid;
   color: white;
@@ -13,15 +12,31 @@ export const NavbarContainer = styled.nav`
 `;
 
 export const NavLinks = styled.div`
-  /* color: black; */
   display: flex;
   gap: 16px;
 `;
 
 export const StyledLink = styled(Link)`
-  color: white;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
   text-decoration: none;
-  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const StyledButton = styled.button`
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
 
   &:hover {
     text-decoration: underline;
