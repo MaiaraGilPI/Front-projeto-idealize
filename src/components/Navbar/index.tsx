@@ -9,7 +9,16 @@ export default function Navbar() {
       <h1>{isAuthenticated ? user?.email : 'Plataforma de Ideias'}</h1>
       <NavLinks>
         {isAuthenticated ? (
-          <StyledButton onClick={logout}>Sair</StyledButton>
+          <>
+            <StyledLink to="/">Início</StyledLink>
+            <StyledLink to="/ideias">Ideias</StyledLink>
+
+            {user?.role === 'ADMIN' && (
+              <StyledLink to="/dashboard">Dashboard</StyledLink>
+            )}
+
+            <StyledButton onClick={logout}>Sair</StyledButton>
+          </>
         ) : (
           <>
             <StyledLink to="/">Início</StyledLink>
