@@ -27,6 +27,7 @@ interface Usuario {
   id: number;
   fullName: string;
   email: string;
+  role: 'USER' | 'ADMIN';
   password?: string;
 }
 
@@ -113,6 +114,7 @@ export default function Dashboard() {
             <tr>
               <th>Nome</th>
               <th>Email</th>
+              <th className="actions">Tipo</th>
               <th className="actions">Ações</th>
             </tr>
           </thead>
@@ -147,8 +149,26 @@ export default function Dashboard() {
                             setEditedUser((prev) => ({ ...prev, password: e.target.value }))
                           }
                         />
+                        <select
+                          value={editedUser.role || 'USER'}
+                          onChange={(e) =>
+                            setEditedUser((prev) => ({
+                              ...prev,
+                              role: e.target.value as 'USER' | 'ADMIN',
+                            }))
+                          }
+                        >
+                          <option value="USER">Usuário</option>
+                          <option value="ADMIN">Administrador</option>
+                        </select>
                       </EditForm>
                     </TableCell>
+                  
+                    {/* 👇 ESSA LINHA FALTAVA - garante o alinhamento com a coluna "Tipo" */}
+                    <TableCell style={{ textAlign: 'center' }}>
+                      {editedUser.role === 'ADMIN' ? '👑' : '👤'}
+                    </TableCell>
+                  
                     <TableCell>
                       <SaveButton onClick={handleSave}>Salvar</SaveButton>
                     </TableCell>
@@ -157,6 +177,11 @@ export default function Dashboard() {
                   <>
                     <TableCell>{user.fullName}</TableCell>
                     <TableCell>{user.email}</TableCell>
+                    <TableCell>
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '8px' }}>
+                      {user.role === 'ADMIN' ? '👑' : '👤'}
+                      </div>
+                    </TableCell>
                     <TableCell>
                       <div style={{ display: 'flex', justifyContent: 'center', gap: '8px' }}>
                         <button onClick={() => handleEdit(user)}>✏️</button>

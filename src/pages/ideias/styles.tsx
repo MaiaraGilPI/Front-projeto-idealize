@@ -55,11 +55,29 @@ export const DialogBox = styled.div`
   border-radius: 12px;
   width: 90%;
   max-width: 600px;
-  text-align: center;
+  text-align: left;
 
   h3 {
     margin-bottom: 1rem;
+    text-align: center;
     color: #003f88;
+  }
+
+  .autor-info, .conteudo-ideia {
+    background: #f1f1f1;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+
+    h4 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #0077b6;
+    }
+
+    p {
+      margin: 4px 0;
+    }
   }
 `;
 
