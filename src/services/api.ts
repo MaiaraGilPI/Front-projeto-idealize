@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000', // Altere para o backend real quando necessário
+  baseURL: 'pji110.mateusrodcosta.dev:3000', // Altere para o backend real quando necessário
 });
 
 // Interceptor para adicionar token JWT automaticamente
